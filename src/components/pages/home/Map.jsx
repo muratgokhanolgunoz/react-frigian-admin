@@ -1,0 +1,108 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import React, { useContext, useState, memo } from 'react';
+import Context from '../../../context/Context';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import ControlButtons from './ControlButtons';
+import { FaUser } from 'react-icons/fa';
+import mapStyle from '../../../tools/google_maps/styles';
+
+const firmColors = ["#8b8989", "#008001", "#ff0000"];
+
+const Map = () => {
+    const context = useContext(Context);
+
+    const [zoom, setZoom] = useState(6.8);
+    const [center, setCenter] = useState({ lat: 39.0, lng: 35.0 });
+    const [isOpenInfoWindow, setIsOpenInfoWindow] = useState(false);
+    const [activeMarker, setActiveMarker] = useState({});
+    const [firmUsers, setFirmUsers] = useState([]);
+
+    const toggleInfoWindow = (_status) => {
+        setIsOpenInfoWindow(_status)
+    }
+
+    const handleUsers = (_users = 0, _activeUsers = 0) => {
+        setFirmUsers([]);
+        let arrayUsers = [];
+        for (let i = 1; i <= _users; i++) {
+            let user = {
+                id: i,
+                name: "",
+                photo: "",
+                active: i > _activeUsers ? 0 : 1
+            }
+            arrayUsers.push(user);
+        }
+        setFirmUsers(arrayUsers);
+    }
+
+    return (
+        <div id="map">
+            <ControlButtons
+                setCenter={setCenter}
+                setZoom={setZoom}
+            />
+
+            <LoadScript
+                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY} >
+                <GoogleMap
+                    mapContainerStyle={{ width: "100%", height: '700px' }}
+                    center={center}
+                    zoom={zoom}
+                    onIdle={() => { setZoom(); setCenter({}) }}
+                    options={{
+                        styles: mapStyle,
+                        streetViewControl: false,
+                        mapTypeControl: false,
+                        gestureHandling: 'greedy',
+                        zoomControl: false
+                    }}>
+
+                    {
+                        context.firms.map((firm, index) => (
+                            <Marker
+                                key={index}
+                                position={{ lat: parseFloat(firm.lat), lng: parseFloat(firm.long) }}
+                                icon={`./assets/img/map/${firm.color}.svg`}
+                                onMouseDown={() => { setActiveMarker(firm); handleUsers(firm.users, firm.ausers); toggleInfoWindow(true) }}
+                                onMouseUp={() => { setActiveMarker({}); toggleInfoWindow(false) }}
+                            />
+                        ))
+                    }
+
+                    {
+                        isOpenInfoWindow &&
+                        (
+                            <InfoWindow
+                                style={{ backgroundColor: `${firmColors[activeMarker.color]}` }}
+                                position={{
+                                    lat: parseFloat(activeMarker.lat),
+                                    lng: parseFloat(activeMarker.long)
+                                }}
+                                onCloseClick={() => toggleInfoWindow(false)}
+                            >
+                                <div>
+                                    <div id="map-info-window-lower">
+                                        <span className="font-weight-bold font-size-15">{activeMarker.name} [{activeMarker.ausers}/{activeMarker.users}]</span>
+                                    </div>
+                                    <br />
+                                    <div>
+                                        {
+                                            firmUsers.map((user, i) => (
+                                                <FaUser key={i} style={{ fontSize: "1.3em", color: user.active === 0 ? `${firmColors[0]}` : `${firmColors[1]}` }} />
+                                            ))
+                                        }
+                                    </div>
+                                </div>
+                            </InfoWindow>
+                        )
+                    }
+                </GoogleMap>
+            </LoadScript>
+        </div>
+    )
+}
+
+export default memo(Map)

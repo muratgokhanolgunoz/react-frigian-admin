@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap');
+
+:root {
+    --color-1: #f89d13;
+    --color-2: #343a40;
+    --color-3: #f8f9fa;
+    --color-4: #da1d1d;
+
+    --font-family-1: 'Gemunu Libre', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+
+body {
+    background-color: #eff1f7;
+    font-family: var(--font-family-1);
+    font-size: 20px
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-size-15 {
+    font-size: 1.5em;
+}
+
+/* ========== CUSTOM SCROLLBAR STYLES ========== */
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

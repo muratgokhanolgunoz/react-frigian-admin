@@ -1,0 +1,257 @@
+@import url("./template.css");
+
+/* ========== LOGIN FORM STYLES ========== */
+#login {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0;
+}
+
+#login-form-img {
+    max-width: 200px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#login-form {
+    background-color: #fff;
+    padding: 40px 30px;
+}
+
+.login-form-row {
+    margin-bottom: 10px;
+}
+
+.login-form-row label {
+    width: 80px;
+}
+
+.login-form-row input {
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid gray;
+    transition: border-color .5s;
+}
+
+.login-form-row input:focus {
+    outline: none;
+    border-color: #000;
+    transition: border-color .5s;
+}
+
+.login-form-row button {
+    padding: 5px 40px;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    transition: box-shadow 0.2s;
+}
+
+.login-form-row button:hover {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.2s;
+}
+
+.login-form-row button:focus {
+    outline: none;
+}
+
+/* ========== SIDABER STYLES ========== */
+
+#sidebar {
+    width: 270px;
+    height: 100vh;
+    background-color: var(--color-2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 40px #eff1f7;
+}
+
+#sidebar-logo {
+    padding: 20px;
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+#sidebar-body {
+    overflow-y: auto;
+}
+
+/* ========== NAVBAR STYLES ========== */
+
+#navbar {
+    width: 100%;
+    background-color: #fff;
+    padding-left: 270px;
+    height: 70px;
+    overflow-y: hidden;
+}
+
+#sidebar-toggle {
+    cursor: pointer;
+    float: left;
+}
+
+#sidebar-toggle:after {
+    content: "MENU";
+}
+
+#sidebar-toggle svg {
+    font-size: 35px;
+    margin: 10px;
+}
+
+#nav {
+    float: right;
+}
+
+#nav ul li {
+    display: inline-block;
+    padding: 20px;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: var(--color-2);
+    text-transform: uppercase;
+}
+
+/* ========== AREA STYLES ========== */
+
+#area {
+    margin: 30px;
+    padding-left: 270px;
+}
+
+#area-lower {
+    background-color: #fff;
+    width: 100%;
+}
+
+/* ========== HOME SECTION STYLES ========== */
+
+#map {
+    padding: 25px;
+}
+
+#map-control-buttons button {
+    background-color: #fff;
+    padding: 7px 12px 7px 12px;
+    color: #000;
+    margin: 10px !important;
+    position: absolute;
+    z-index: 1;
+    -webkit-box-shadow: 0px 0px 35px -12px rgba(112, 112, 112, 1);
+    -moz-box-shadow: 0px 0px 35px -12px rgba(112, 112, 112, 1);
+    box-shadow: 0px 0px 35px -12px rgba(112, 112, 112, 1);
+}
+
+#map-info-window-lower {
+    padding: 0 15px;
+    text-align: center !important;
+}
+
+/* ========== FEEDS STYLES ========== */
+
+#sidebar-feeds {
+    background-color: #fff;
+    min-height: 200px;
+    max-height: 650px;
+    overflow-y: scroll;
+    margin: 10px;
+    padding: 10px;
+}
+
+.feed-box {
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(222, 218, 222, 1);
+    -moz-box-shadow: 0px 0px 2px 2px rgba(222, 218, 222, 1);
+    box-shadow: 0px 0px 2px 2px rgba(222, 218, 222, 1);
+    margin: 15px 5px;
+    padding: 0 5px;
+}
+
+.feed-color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.feed-firm {
+    display: inline-block;
+}
+
+.feed-replied {
+    float: right;
+}
+
+.feed-replied svg {
+    font-size: 1.3em;
+}
+
+.feed-header {
+    border-bottom: 1px solid lightgray;
+    font-weight: bold;
+}
+
+.feed-body {
+    font-size: .9em;
+}
+
+.feed-footer {
+    border-top: 1px solid lightgray;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.feed-time {
+    font-size: .8em;
+    float: right;
+    margin-top: 3px;
+}
+
+/* ========== FILE STATISTICS STYLES ========== */
+
+.file-statistics-box {    
+    padding: 5px;    
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+}
+
+.file-statistics-box p {
+    font-size: 1.2em;
+}
+
+.file-statistics-item {
+    background-color: #fff;
+}
+
+.file-statistics-icon svg {
+    margin-right: 20px;
+    margin-top: -20px;
+}
+
+.file-statistics-icon svg,
+.file-statistics-text {
+    font-size: 1.7em;
+}
+
+.file-statistics-title {
+    font-size: .97em;
+}
+
+.file-statistics-margin-right {
+    margin-right: 5px;
+}
+
+.file-statistics-margin-left {
+    margin-left: 5px;
+}
