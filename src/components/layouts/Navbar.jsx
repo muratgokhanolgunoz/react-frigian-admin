@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { VscListSelection } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import Context from '../../context/Context';
+import { AiOutlinePoweroff } from 'react-icons/ai';
 
 const Navbar = () => {
     let context = useContext(Context);
@@ -30,7 +31,9 @@ const Navbar = () => {
                         <Link to="/messages">Campain Codes</Link>
                     </li>
                     <li>
-                        <a onClick={() => context.funcHandleSetToken("")}>LOGOUT</a>
+                        <a style={{ cursor: 'pointer', backgroundColor: "var(--color-2)", color: "#fff", padding: "10px" }} onClick={() => context.funcHandleSetToken("")}>
+                            <AiOutlinePoweroff />&emsp;LOGOUT
+                        </a>
                     </li>
                 </ul>
             </div>

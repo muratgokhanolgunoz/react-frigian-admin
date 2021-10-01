@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react';
-import Context from '../../../context/Context';
+import Context from '../../../../context/Context';
 import { FaShip, FaFlagCheckered, FaTag, FaEnvelope } from 'react-icons/fa';
 
 const FileStatistics = () => {

@@ -84,16 +84,22 @@ const Map = () => {
                                 onCloseClick={() => toggleInfoWindow(false)}
                             >
                                 <div>
-                                    <div id="map-info-window-lower">
-                                        <span className="font-weight-bold font-size-15">{activeMarker.name} [{activeMarker.ausers}/{activeMarker.users}]</span>
+                                    <div>
+                                        <img className="map-info-window-img" src={`https://demo.frigian.net/assets/img/logos/${activeMarker.logo}`} alt="" />
+                                    </div>
+                                    <div>
+                                        <span className="font-weight-bold font-size-15">{activeMarker.name}</span>
                                     </div>
                                     <br />
                                     <div>
-                                        {
-                                            firmUsers.map((user, i) => (
-                                                <FaUser key={i} style={{ fontSize: "1.3em", color: user.active === 0 ? `${firmColors[0]}` : `${firmColors[1]}` }} />
-                                            ))
-                                        }
+                                        <span className="font-weight-bold font-size-13">[ {activeMarker.ausers} / {activeMarker.users} ]</span>&emsp;
+                                        <span>
+                                            {
+                                                firmUsers.map((user, i) => (
+                                                    <FaUser key={i} className="font-size-13" style={{ color: user.active === 0 ? `${firmColors[0]}` : `${firmColors[1]}` }} />
+                                                ))
+                                            }
+                                        </span>
                                     </div>
                                 </div>
                             </InfoWindow>

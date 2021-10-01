@@ -1,7 +1,7 @@
 import React from 'react';
-import Feeds from './sidebar_sections/Feeds';
+import Feeds from './sidebar_sections/feeds/Feeds';
+import FileStatistics from './sidebar_sections/statistics/FileStatistics';
 import { Image } from 'react-bootstrap';
-import FileStatistics from './sidebar_sections/FileStatistics';
 
 const Sidebar = () => {
     return (

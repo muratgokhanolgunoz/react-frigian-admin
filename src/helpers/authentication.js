@@ -6,7 +6,7 @@ const login = (_payload) => {
         .then((response) => {
             return response.data.token;
         })
-        .catch(() => console.log("Error when authenticate"))
+        .catch(() => console.log("An error occured when authenticate"))
 }
 
 const logout = () => {
