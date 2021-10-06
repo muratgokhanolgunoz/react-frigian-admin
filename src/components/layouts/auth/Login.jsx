@@ -40,7 +40,7 @@ const Login = () => {
                 onSubmit={(e) => handleLogin(e)}
             >
                 <div className="login-form-row">
-                    <label htmlFor="login-form-username">Username</label>
+                    <label htmlFor="login-form-username">eMail</label>
                     <input
                         id="login-form-username"
                         name="login-form-username"

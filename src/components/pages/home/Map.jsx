@@ -46,7 +46,7 @@ const Map = () => {
             />
 
             <LoadScript
-                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY} >
+                googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}>
                 <GoogleMap
                     mapContainerStyle={{ width: "100%", height: '700px' }}
                     center={center}
@@ -57,7 +57,7 @@ const Map = () => {
                         streetViewControl: false,
                         mapTypeControl: false,
                         gestureHandling: 'greedy',
-                        zoomControl: false
+                        zoomControl: false,
                     }}>
 
                     {
