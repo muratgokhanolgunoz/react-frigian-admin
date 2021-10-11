@@ -1,12 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useContext } from 'react';
 import Context from '../../../context/Context';
-import AuthServices from '../../../services/AuthServices';
-// import { authentication } from '../../../helpers/authentication';
+import { showToast } from '../../../core/functions';
+import { authentication } from '../../../helpers/authentication';
 
 const Login = () => {
     const context = useContext(Context);
-    let authServices = new AuthServices();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -20,13 +19,18 @@ const Login = () => {
         payload.append("captcha", "");
         payload.append("secondid", "");
 
-        authServices.authenticate(payload)
+        authentication.login(payload)
             .then((response) => {
-                context.funcHandleSetToken(response.data.token);
+                if (response.data.token !== undefined && response.data.token !== null && response.data.token !== "") {
+                    context.funcHandleSetToken(response.data.token);
+                } else {
+                    showToast("top-right", "Authentication failed", "error", 10000);
+                }
             })
-            .catch(() => console.log("Error when authenticate"));
-
-        //context.funcHandleSetToken(authentication.login(payload));
+            .catch((response) => {
+                console.warn(response);
+                showToast("top-right", response, "error", 10000);
+            })
     }
 
     return (

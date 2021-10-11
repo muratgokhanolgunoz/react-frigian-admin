@@ -4,16 +4,14 @@
 import React, { useContext, useState, memo } from 'react';
 import Context from '../../../context/Context';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import ControlButtons from './ControlButtons';
+import ResetButton from './ResetButton';
 import { FaUser } from 'react-icons/fa';
-import mapStyle from '../../../tools/google_maps/styles';
+import mapStyle from '../../../utils/google_maps/styles';
 
 const firmColors = ["#8b8989", "#008001", "#ff0000"];
 
 const Map = () => {
     const context = useContext(Context);
-
-    const [zoom, setZoom] = useState(6.8);
     const [center, setCenter] = useState({ lat: 39.0, lng: 35.0 });
     const [isOpenInfoWindow, setIsOpenInfoWindow] = useState(false);
     const [activeMarker, setActiveMarker] = useState({});
@@ -40,18 +38,17 @@ const Map = () => {
 
     return (
         <div id="map">
-            <ControlButtons
+            <ResetButton
                 setCenter={setCenter}
-                setZoom={setZoom}
             />
 
             <LoadScript
                 googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}>
                 <GoogleMap
-                    mapContainerStyle={{ width: "100%", height: '700px' }}
+                    mapContainerStyle={{ width: "100%", height: 'calc(100vh - 230px)' }}
                     center={center}
-                    zoom={zoom}
-                    onIdle={() => { setZoom(); setCenter({}) }}
+                    zoom={context.zoom}
+                    onIdle={() => context.funcHandleSetMapZoom()}
                     options={{
                         styles: mapStyle,
                         streetViewControl: false,

@@ -7,6 +7,7 @@ const Provider = (props) => {
     const [feeds, setFeeds] = useState([]);
     const [files, setFiles] = useState([]);
     const [token, setToken] = useState("");
+    const [zoom, setZoom] = useState(6.8);
 
     return (
         <Context.Provider
@@ -15,10 +16,12 @@ const Provider = (props) => {
                 feeds,
                 files,
                 token,
+                zoom,
                 funcHandleSetFirms: (_firms) => setFirms(_firms),
                 funcHandleSetFeeds: (_feeds) => setFeeds(_feeds),
                 funcHandleSetFiles: (_files) => setFiles(_files),
-                funcHandleSetToken: (_token) => setToken(_token)
+                funcHandleSetToken: (_token) => setToken(_token),
+                funcHandleSetMapZoom: (_zoom) => setZoom(_zoom)
             }}>
             {props.children}
         </Context.Provider>

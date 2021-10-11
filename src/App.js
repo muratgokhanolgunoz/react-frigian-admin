@@ -1,36 +1,53 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext, Fragment } from 'react';
 import Context from './context/Context';
-import MapApi from './services/MapServices';
-import Main from './components/layouts/Main';
-import Sidebar from './components/layouts/Sidebar';
-
-import './assets/css/style.css';
-import './assets/js/script.js';
 import Login from './components/layouts/auth/Login';
+import Sidebar from './components/layouts/sidebar/Sidebar';
+import Main from './components/layouts/Main';
 import { checkToken } from './helpers/checkToken';
+import { getMapData } from './helpers/mapData';
+import { ToastContainer } from 'react-toastify';
+
+import './assets/css/style.scss';
+import 'react-toastify/dist/ReactToastify.css';
+import './assets/js/script.js';
 
 const App = () => {
-  let mapApi = new MapApi();
   const context = useContext(Context)
 
   useEffect(() => {
     if (checkToken.check(context.token)) {
-      getMapData()
+      getMapData(context)
       setInterval(() => {
-        getMapData()
+        getMapData(context)
       }, 30000)
     }
   }, [context.token]);
 
-  const getMapData = () => {
-    mapApi.getFirmList()
-      .then((response) => {
-        context.funcHandleSetFirms(response.data.firms);
-        context.funcHandleSetFeeds(response.data.feeds);
-        context.funcHandleSetFiles(response.data.files);
-      })
-      .catch(() => console.warn("An error occured when fetching current firm & feed informations."));
+  useEffect(() => {
+    if (checkToken.check(context.token)) {
+      window.onresize = windowResize;
+    }
+  });
+
+  const windowResize = () => {    
+    if (window.innerWidth >= 1200) {
+      context.funcHandleSetMapZoom(6.8);
+      document.getElementById("sidebar").setAttribute("style", "display: block !important");
+      document.getElementById("sidebar-toggle-open").setAttribute("style", "display: none !important");
+      document.getElementById("sidebar-toggle-close").setAttribute("style", "display: none !important");
+      document.getElementById("nav").setAttribute("style", "display: block !important");
+      document.getElementById("nav-toggle-open").setAttribute("style", "display: none !important");
+      document.getElementById("nav-toggle-close").setAttribute("style", "display: none !important");
+    } else {
+      context.funcHandleSetMapZoom((window.innerWidth / window.innerHeight) * 5.8);
+      document.getElementById("sidebar").setAttribute("style", "display: none !important");
+      document.getElementById("sidebar-toggle-open").setAttribute("style", "display: block !important");
+      document.getElementById("sidebar-toggle-close").setAttribute("style", "display: block !important");
+      document.getElementById("nav").setAttribute("style", "display: none !important");
+      document.getElementById("nav-toggle-open").setAttribute("style", "display: block !important");
+      document.getElementById("nav-toggle-close").setAttribute("style", "display: block !important");
+    }
   }
 
   return (
@@ -45,6 +62,8 @@ const App = () => {
             </Fragment>
           )
       }
+
+      <ToastContainer />
     </section>
   );
 }

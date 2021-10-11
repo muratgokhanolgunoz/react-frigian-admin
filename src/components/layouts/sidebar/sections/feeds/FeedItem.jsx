@@ -1,14 +1,23 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Accordion } from 'react-bootstrap';
 import { FaCheck } from 'react-icons/fa';
+import FeedDropdown from '../../../components/dropdown/feed/FeedDropdown';
+import FeedAnswerButton from './FeedAnswerButton';
 
 const FeedItem = (props) => {
 
     const { feed } = props;
     const feedColors = ["#008001", "#e6e427", "#ff0000"];
 
+    const [showReplyWindow, setShowReplyWindow] = useState(false);
+
     return (
         <Fragment>
+            {
+                showReplyWindow === true
+                ? <FeedDropdown hideReplyWindow={setShowReplyWindow} id={feed.feedback_id} />
+                : null
+            }
             <Accordion style={{ borderColor: "red" }}>
                 <div className="feed-box">
                     <Accordion.Item eventKey="0">
@@ -18,14 +27,13 @@ const FeedItem = (props) => {
                                 <div className="feed-firm">
                                     <span className="feed-firm">{feed.name}</span>
                                 </div>
-                                {
-                                    feed.replied &&
-                                    (
-                                        <span className="feed-replied">
-                                            &emsp;<FaCheck />
-                                        </span>
-                                    )
-                                }
+                                <div className="feed-replied">
+                                    {
+                                        feed.replied
+                                            ? <FaCheck />
+                                            : <FeedAnswerButton showReplyWindow={setShowReplyWindow} />
+                                    }
+                                </div>
                             </div>
                         </Accordion.Header>
                         <Accordion.Body>
@@ -36,7 +44,6 @@ const FeedItem = (props) => {
                                 <span className="feed-user">{feed.user}</span>
                                 <span className="feed-time">{feed.time}</span>
                             </div>
-
                         </Accordion.Body>
                     </Accordion.Item>
                 </div>

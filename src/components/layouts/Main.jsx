@@ -1,6 +1,6 @@
 import React from 'react';
-import Area from './Area';
-import Navbar from './Navbar';
+import Area from './area/Area';
+import Navbar from './navbar/Navbar';
 
 const Main = () => {
     return (

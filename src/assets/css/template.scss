@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap");
+
+/* ========== GENERAL STYLES ========== */
+
+:root {
+  --color-1: #f89d13;
+  --color-2: #343a40;
+  --color-3: #f8f9fa;
+  --color-4: #da1d1d;
+  --color-5: #3abeff;
+
+  --font-family-1: "Gemunu Libre", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+
+body {
+  background-color: #eff1f7;
+  font-family: var(--font-family-1);
+  font-size: 20px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.font-size-09 {
+  font-size: 0.9em;
+}
+
+.font-size-10 {
+  font-size: 1em;
+}
+
+.font-size-13 {
+  font-size: 1.3em;
+}
+
+/* ========== CUSTOM SCROLLBAR STYLES ========== */
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ========== TOASTIFY STYLES ========== */
+.Toastify__toast-container {
+  font-size: 0.7em;
+}
+
+/* ========== BUTTON STYLES ========== */
+
+.button {
+  font-size: 0.9em;
+  padding: 0 10px;
+}
+
+.button-1 {
+  background-color: var(--color-3);
+  color: var(--color-2);
+  transition: all 0.5s;
+  &:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    transition: all 0.5s;
+  }
+}
+
+.button-2 {
+  background-color: var(--color-5);
+  color: var(--color-3);
+  transition: all 0.5s;
+  &:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    transition: all 0.5s;
+  }
+}

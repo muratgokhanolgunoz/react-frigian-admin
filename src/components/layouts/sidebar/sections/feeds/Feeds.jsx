@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Context from '../../../../context/Context';
+import Context from '../../../../../context/Context';
 import FeedItem from './FeedItem';
 
 const Feeds = () => {
@@ -12,12 +12,13 @@ const Feeds = () => {
                 <span>FRIGIAN FEEDS</span>
             </div>
 
-            {
-                context.feeds.map((feed, index) => (
-                    <FeedItem key={index} feed={feed} />
-                ))
-            }
-
+            <div id="feed-body">
+                {
+                    context.feeds.map((feed, index) => (
+                        <FeedItem key={index} feed={feed} />
+                    ))
+                }
+            </div>
         </div>
     )
 }

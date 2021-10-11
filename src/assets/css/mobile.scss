@@ -1,0 +1,28 @@
+@media screen and (max-width: 1200px) {
+  #area {
+    padding-left: 0 !important;
+  }
+
+  #navbar {
+    padding-left: 0 !important;
+  }
+
+  #nav {
+    position: fixed;
+    width: 270px;
+    right: 0;
+    background-color: #fff;
+    height: 100vh;
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
+    ul {
+      li {
+        display: block !important;
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+    #nav-toggle-close {
+      margin-bottom: 25px;
+    }
+  }
+}
