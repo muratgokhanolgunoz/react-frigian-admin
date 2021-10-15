@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
 /* ========== GENERAL STYLES ========== */
 
@@ -8,8 +9,10 @@
   --color-3: #f8f9fa;
   --color-4: #da1d1d;
   --color-5: #3abeff;
+  --color-6: #dddddd;
 
   --font-family-1: "Gemunu Libre", sans-serif;
+  --font-family-2: "Rubik", sans-serif;
 }
 
 * {
@@ -75,7 +78,7 @@ body {
 }
 
 .button-1 {
-  background-color: var(--color-3);
+  background-color: var(--color-6);
   color: var(--color-2);
   transition: all 0.5s;
   &:hover {

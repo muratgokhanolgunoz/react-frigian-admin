@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
-import Home from '../../pages/home/Index';
+import Home from '../../../../pages/home/Index'
 
 const Area = () => {
     return (

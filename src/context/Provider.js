@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import Context from './Context';
+import React, { useState } from "react";
+import Context from "./Context";
 
 const Provider = (props) => {
-
     const [firms, setFirms] = useState([]);
     const [feeds, setFeeds] = useState([]);
     const [files, setFiles] = useState([]);
@@ -21,10 +20,11 @@ const Provider = (props) => {
                 funcHandleSetFeeds: (_feeds) => setFeeds(_feeds),
                 funcHandleSetFiles: (_files) => setFiles(_files),
                 funcHandleSetToken: (_token) => setToken(_token),
-                funcHandleSetMapZoom: (_zoom) => setZoom(_zoom)
-            }}>
+                funcHandleSetMapZoom: (_zoom) => setZoom(_zoom),
+            }}
+        >
             {props.children}
         </Context.Provider>
     );
-}
+};
 export default Provider;

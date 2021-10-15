@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-import Context from '../../../../../context/Context';
+import Context from '../../../../../../../context/Context';
 import PropTypes from 'prop-types';
-import FeedServices from '../../../../../services/FeedServices';
-import { showToast } from '../../../../../core/functions';
-import { getMapData } from '../../../../../helpers/mapData';
+import FeedServices from '../../../../../../../services/FeedServices';
+import { showToast } from '../../../../../../../core/functions';
+import { getMapData } from '../../../../../../../helpers/mapData';
 import { IoIosSend } from 'react-icons/io';
 import { VscChromeClose } from 'react-icons/vsc';
 import './_feed.scss';

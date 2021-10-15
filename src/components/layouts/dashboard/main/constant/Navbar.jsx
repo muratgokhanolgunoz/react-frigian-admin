@@ -2,8 +2,8 @@
 import React, { useContext, useEffect } from 'react';
 import { VscListSelection } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
-import Context from '../../../context/Context';
-import { authentication } from '../../../helpers/authentication';
+import Context from '../../../../../context/Context';
+import { authentication } from '../../../../../helpers/authentication';
 import { AiOutlinePoweroff } from 'react-icons/ai';
 import { VscChromeClose } from 'react-icons/vsc';
 

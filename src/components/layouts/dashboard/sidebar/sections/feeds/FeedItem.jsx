@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import { Accordion } from 'react-bootstrap';
-import { FaCheck } from 'react-icons/fa';
-import FeedDropdown from '../../../components/dropdown/feed/FeedDropdown';
+import { VscCheck } from 'react-icons/vsc';
+import FeedDropdown from '../../components/dropdown/feed/FeedDropdown';
 import FeedAnswerButton from './FeedAnswerButton';
 
 const FeedItem = (props) => {
 
-    const { feed } = props;
+    const { rowIndex, feed } = props;
     const feedColors = ["#008001", "#e6e427", "#ff0000"];
 
     const [showReplyWindow, setShowReplyWindow] = useState(false);
@@ -15,12 +15,12 @@ const FeedItem = (props) => {
         <Fragment>
             {
                 showReplyWindow === true
-                ? <FeedDropdown hideReplyWindow={setShowReplyWindow} id={feed.feedback_id} />
-                : null
+                    ? <FeedDropdown hideReplyWindow={setShowReplyWindow} id={feed.feedback_id} />
+                    : null
             }
-            <Accordion style={{ borderColor: "red" }}>
+            <Accordion style={{ borderColor: "red" }} defaultActiveKey="0">
                 <div className="feed-box">
-                    <Accordion.Item eventKey="0">
+                    <Accordion.Item eventKey={rowIndex}>
                         <Accordion.Header>
                             <div className="feed-header">
                                 <span className="feed-color" style={{ backgroundColor: `${feedColors[feed.color - 1]}` }}></span>
@@ -30,7 +30,7 @@ const FeedItem = (props) => {
                                 <div className="feed-replied">
                                     {
                                         feed.replied
-                                            ? <FaCheck />
+                                            ? <VscCheck />
                                             : <FeedAnswerButton showReplyWindow={setShowReplyWindow} />
                                     }
                                 </div>

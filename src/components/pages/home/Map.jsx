@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import React, { useContext, useState, memo } from 'react';
+import React, { useContext, useState } from 'react';
 import Context from '../../../context/Context';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import ResetButton from './ResetButton';
@@ -45,7 +45,7 @@ const Map = () => {
             <LoadScript
                 googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}>
                 <GoogleMap
-                    mapContainerStyle={{ width: "100%", height: 'calc(100vh - 230px)' }}
+                    mapContainerStyle={{ width: "100%", height: 'calc(100vh - 270px)' }}
                     center={center}
                     zoom={context.zoom}
                     onIdle={() => context.funcHandleSetMapZoom()}
@@ -108,4 +108,4 @@ const Map = () => {
     )
 }
 
-export default memo(Map)
+export default Map
