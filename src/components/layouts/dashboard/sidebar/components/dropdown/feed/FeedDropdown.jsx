@@ -6,7 +6,7 @@ import { showToast } from '../../../../../../../core/functions';
 import { getMapData } from '../../../../../../../helpers/mapData';
 import { IoIosSend } from 'react-icons/io';
 import { VscChromeClose } from 'react-icons/vsc';
-import './_feed.scss';
+import './_feedDropdown.scss';
 
 const FeedDropdown = props => {
     const context = useContext(Context);

@@ -10,6 +10,7 @@
   --color-4: #da1d1d;
   --color-5: #3abeff;
   --color-6: #dddddd;
+  --color-7: #15993c;
 
   --font-family-1: "Gemunu Libre", sans-serif;
   --font-family-2: "Rubik", sans-serif;
@@ -26,6 +27,14 @@ body {
   background-color: #eff1f7;
   font-family: var(--font-family-1);
   font-size: 20px;
+}
+
+.page-padding {
+  padding-bottom: 30px;
+}
+
+.table-nowrap {
+  white-space: nowrap;  
 }
 
 .font-weight-bold {
@@ -90,6 +99,50 @@ body {
 
 .button-2 {
   background-color: var(--color-5);
+  color: var(--color-3);
+  transition: all 0.5s;
+  &:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    transition: all 0.5s;
+  }
+}
+
+.button-3 {
+  background-color: var(--color-2);
+  color: var(--color-3);
+  transition: all 0.5s;
+  &:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    transition: all 0.5s;
+  }
+}
+
+.button-4 {
+  background-color: var(--color-7);
+  color: var(--color-3);
+  transition: all 0.5s;
+  &:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    transition: all 0.5s;
+  }
+}
+
+.button-5 {
+  background-color: var(--color-4);
+  color: var(--color-3);
+  transition: all 0.5s;
+  &:hover {
+    background-color: var(--color-2);
+    color: var(--color-3);
+    transition: all 0.5s;
+  }
+}
+
+.button-6 {
+  background-color: var(--color-1);
   color: var(--color-3);
   transition: all 0.5s;
   &:hover {

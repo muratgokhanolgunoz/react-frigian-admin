@@ -71,8 +71,8 @@ const Navbar = () => {
                         <Link to="/campain">Campain Codes</Link>
                     </li>
                     <li>
-                        <a style={{ cursor: 'pointer', backgroundColor: "var(--color-2)", color: "#fff", padding: "10px" }} onClick={() => authentication.logout(context)}>
-                            <AiOutlinePoweroff />&emsp;LOGOUT
+                        <a style={{ cursor: 'pointer' }} onClick={() => authentication.logout(context)}>
+                            <AiOutlinePoweroff />
                         </a>
                     </li>
                 </ul>

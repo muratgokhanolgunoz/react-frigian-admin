@@ -51,7 +51,7 @@ const App = () => {
   }
 
   return (
-    <section>
+    <section className="page-padding">
       {!checkToken.check(context.token)
         ? <Login />
         : <Dashboard left={<Sidebar />} right={<Main />} />

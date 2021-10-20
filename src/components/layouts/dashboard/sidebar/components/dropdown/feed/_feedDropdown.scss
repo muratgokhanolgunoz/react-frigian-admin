@@ -15,9 +15,9 @@ $arrow-size: 30px;
     .feed-dropdown-arrow-left {
       width: 0;
       height: 0;
-      border-top: ($arrow-size / 3) solid transparent;
-      border-bottom: ($arrow-size / 3) solid transparent;
-      border-right: ($arrow-size / 3) solid var(--color-3);
+      border-top: ($arrow-size * 0.333333333) solid transparent;
+      border-bottom: ($arrow-size * 0.333333333) solid transparent;
+      border-right: ($arrow-size * 0.333333333) solid var(--color-3);
       margin-left: -$arrow-size + 10;
       position: absolute;
     }

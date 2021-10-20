@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import Home from '../../../../pages/home/Index'
+import Firms from '../../../../pages/firm/Index'
 
 const Area = () => {
     return (
@@ -11,7 +12,7 @@ const Area = () => {
                         <Home />
                     </Route>
                     <Route path="/companies">
-
+                        <Firms />
                     </Route>
                     <Route path="/messages">
 
