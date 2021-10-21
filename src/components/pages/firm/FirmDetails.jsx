@@ -528,7 +528,7 @@ const FirmDetails = (props) => {
                             <Row>
                                 <Col>
                                     <button
-                                        className="button button-5"
+                                        className="button button-1"
                                         style={{
                                             fontSize: "1.1em",
                                             cursor: "pointer",
@@ -540,7 +540,7 @@ const FirmDetails = (props) => {
                                         }}
                                     >
                                         <VscChromeClose />
-                                        &emsp;CANCEL
+                                        &emsp;CLOSE
                                     </button>
                                 </Col>
                                 <Col>
