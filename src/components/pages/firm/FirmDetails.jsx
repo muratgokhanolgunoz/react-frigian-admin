@@ -18,10 +18,6 @@ const FirmDetails = (props) => {
     const context = useContext(Context);
     const firmContext = useContext(FirmContext);
 
-    const [countries, setCountries] = useState([]);
-    const [currencies, setCurrencies] = useState([]);
-    const [packages, setPackages] = useState([]);
-    const [integrators, setIntegrators] = useState([]);
     const [logo, setLogo] = useState("");
     const [selectedLogo, setSelectedLogo] = useState("");
 
@@ -51,11 +47,7 @@ const FirmDetails = (props) => {
     const [subdomain, setSubdomain] = useState(firmContext.firm.subdomain);
     const [logoPanel, setLogoPanel] = useState(0); // 0 => Preview Panel, 1 => Resize Panel
 
-    useEffect(() => {
-        getCountries(context.token);
-        getCurrencies(context.token);
-        getPackages(context.token);
-        getIntegrators(context.token);
+    useEffect(() => {        
         getLogo(context.token);
     }, []);
 
@@ -96,42 +88,6 @@ const FirmDetails = (props) => {
                     console.warn("Error: Firm Update");
                 });
         }
-    };
-
-    const getCountries = (_token) => {
-        firmServices
-            .getCountries(_token)
-            .then((response) => {
-                setCountries(response.data.countries);
-            })
-            .catch(() => console.warn("Error: Countries"));
-    };
-
-    const getCurrencies = (_token) => {
-        firmServices
-            .getCurrencies(_token)
-            .then((response) => {
-                setCurrencies(response.data.currencies);
-            })
-            .catch(() => console.warn("Error: Currencies"));
-    };
-
-    const getPackages = (_token) => {
-        firmServices
-            .getPackages(_token)
-            .then((response) => {
-                setPackages(response.data.packages);
-            })
-            .catch(() => console.warn("Error: Packages"));
-    };
-
-    const getIntegrators = (_token) => {
-        firmServices
-            .getIntegrators(_token)
-            .then((response) => {
-                setIntegrators(response.data.firms);
-            })
-            .catch(() => console.warn("Error: Integrators"));
     };
 
     const getLogo = (_token) => {
@@ -260,7 +216,7 @@ const FirmDetails = (props) => {
                                             name="firm-country"
                                             onChange={(_e) => setCountryId(_e.target.value)}
                                         >
-                                            {countries.map((country) => (
+                                            {firmContext.countries.map((country) => (
                                                 <option
                                                     value={country.id}
                                                     selected={country.id === countryId ? true : false}
@@ -280,7 +236,7 @@ const FirmDetails = (props) => {
                                             name="firm-integrators"
                                             onChange={(_e) => setIntegratorId(_e.target.value)}
                                         >
-                                            {integrators.map((integrator) => (
+                                            {firmContext.integrators.map((integrator) => (
                                                 <option
                                                     value={integrator.id}
                                                     selected={
@@ -301,7 +257,7 @@ const FirmDetails = (props) => {
                                             name="firm-currency"
                                             onChange={(_e) => setCurrencyId(_e.target.value)}
                                         >
-                                            {currencies.map((currency) => (
+                                            {firmContext.currencies.map((currency) => (
                                                 <option
                                                     value={currency.id}
                                                     selected={currency.id === currencyId ? true : false}
@@ -320,7 +276,7 @@ const FirmDetails = (props) => {
                                             name="firm-package"
                                             onChange={(_e) => setPackageId(_e.target.value)}
                                         >
-                                            {packages.map((pack) => (
+                                            {firmContext.packages.map((pack) => (
                                                 <option
                                                     value={pack.id}
                                                     selected={pack.id === packageId ? true : false}
@@ -402,7 +358,7 @@ const FirmDetails = (props) => {
                                             name="firm-amount-currency"
                                             onChange={(_e) => setAmountCurrencyId(_e.target.value)}
                                         >
-                                            {currencies.map((currency) => (
+                                            {firmContext.currencies.map((currency) => (
                                                 <option
                                                     value={currency.id}
                                                     selected={

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
-import Provider from './context/Provider';
-import App from './App';
 import { history } from './helpers/history';
+import App from './App';
+import Provider from './context/Provider';
 import FirmProvider from './context/FirmProvider';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <Router basename="/" history={history}>
       <Provider>
         <FirmProvider>
@@ -15,6 +15,6 @@ ReactDOM.render(
         </FirmProvider>
       </Provider>
     </Router>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );

@@ -8,29 +8,43 @@ const LogoButton = props => {
 
     return (
         <Fragment>
-            <OverlayTrigger
-                key={tooltipPlacement}
-                placement={tooltipPlacement}
-                overlay={
-                    <Tooltip id={`tooltip-${tooltipPlacement}`}>
-                        {tooltipText}
-                    </Tooltip>
-                }
-            >
-                <span className={`button ${color} ${styles}`} style={{ cursor: "pointer" }} onClick={() => click()}>
-                    {icon && icon}{value}
-                </span>
-            </OverlayTrigger>
+            {
+                !tooltipText || !tooltipPlacement
+                    ?
+                    (
+                        <span className={`button ${color} ${styles}`} style={{ cursor: "pointer" }} onClick={() => click()}>
+                            {icon && icon}{value}
+                        </span>
+                    )
+                    :
+                    (
+                        <OverlayTrigger
+                            key={tooltipPlacement}
+                            placement={tooltipPlacement}
+                            overlay={
+                                <Tooltip id={`tooltip-${tooltipPlacement}`}>
+                                    {tooltipText}
+                                </Tooltip>
+                            }
+                        >
+                            <span className={`button ${color} ${styles}`} style={{ cursor: "pointer" }} onClick={() => click()}>
+                                {icon && icon}{value}
+                            </span>
+                        </OverlayTrigger>
+                    )
+            }
         </Fragment>
     )
 }
 
 LogoButton.propTypes = {
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
     color: PropTypes.string.isRequired,
     icon: PropTypes.element,
     styles: PropTypes.string.isRequired,
-    click: PropTypes.func
+    click: PropTypes.func,
+    tooltipText: PropTypes.string,
+    tooltipPlacement: PropTypes.string
 }
 
 export default LogoButton;
