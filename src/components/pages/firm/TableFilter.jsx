@@ -1,9 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
+import React, { useContext, useEffect } from "react";
+import PropTypes from 'prop-types';
 import FirmContext from "../../../context/FirmContext";
 import Button from "./Button";
+import { Col, Row, Form } from "react-bootstrap";
 import { FcClearFilters } from 'react-icons/fc';
+
 const TableFilter = (props) => {
     const firmContext = useContext(FirmContext);
     const { setFilterCredentials } = props;
@@ -30,6 +32,7 @@ const TableFilter = (props) => {
         firmContext.funcHandleSetFilterPackage(undefined);
         firmContext.funcHandleSetFilterPayment(undefined);
         firmContext.funcHanleSetFilterActive(undefined);
+        firmContext.funcHandleSetPriceVisibility(false);
     }
 
     return (
@@ -77,7 +80,7 @@ const TableFilter = (props) => {
                         </select>
                     </div>
                 </Col>
-                <Col lg={2}>
+                <Col lg={1}>
                     <div className="firm-details-form-group">
                         <label htmlFor="firm-payment">
                             <b>Payment</b>
@@ -109,8 +112,25 @@ const TableFilter = (props) => {
                         </select>
                     </div>
                 </Col>
+                <Col lg={2}>
+                    <br />
+                    <Form.Check
+                        id="firm-price-visibility"
+                        name="firm-price-visibility"
+                        label={`Details ${firmContext.priceVisibility ? 'Show' : 'Hide'}`}
+                        type={'checkbox'}
+                        defaultChecked={firmContext.priceVisibility}
+                        checked={firmContext.priceVisibility}
+                        onChange={(_e) => firmContext.funcHandleSetPriceVisibility(_e.target.checked)}
+                    />
+                </Col>
             </Row>
         </div>
     );
 };
+
+TableFilter.propTypes = {
+    setFilterCredentials: PropTypes.object.isRequired,
+}
+
 export default TableFilter;

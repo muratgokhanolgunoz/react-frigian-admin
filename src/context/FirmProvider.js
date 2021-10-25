@@ -13,6 +13,7 @@ const FirmProvider = props => {
     const [filterPackage, setFilterPackage] = useState(undefined);
     const [filterPayment, setFilterPayment] = useState(undefined);
     const [filterActive, setFilterActive] = useState(undefined);
+    const [priceVisibility, setPriceVisibility] = useState(false);
 
     return (
         <FirmContext.Provider
@@ -27,6 +28,7 @@ const FirmProvider = props => {
                 filterPackage,
                 filterPayment,
                 filterActive,
+                priceVisibility,
                 funcHandleSetTableOrDetails: (_page) => setTableOrDetails(_page),
                 funcHandleSetSelectedFirm: (_firm) => setFirm(_firm),
                 funcHandleSetCountries: (_countries) => setCountries(_countries),
@@ -36,7 +38,8 @@ const FirmProvider = props => {
                 funcHandleSetFilterName: (_filterName) => setFilterName(_filterName),
                 funcHandleSetFilterPackage: (_filterPackage) => setFilterPackage(_filterPackage),
                 funcHandleSetFilterPayment: (_filterPayment) => setFilterPayment(_filterPayment), 
-                funcHanleSetFilterActive: (_filterActive) => setFilterActive(_filterActive)
+                funcHanleSetFilterActive: (_filterActive) => setFilterActive(_filterActive),
+                funcHandleSetPriceVisibility: (_priceVisibility) => setPriceVisibility(_priceVisibility)
             }}
         >
             {props.children}

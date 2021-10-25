@@ -13,6 +13,21 @@ import { VscChromeClose } from "react-icons/vsc";
 import { Col, Row, Container } from "react-bootstrap";
 import "./_firm.scss";
 
+const months = [
+    { id: 1, name: "January" },
+    { id: 2, name: "February" },
+    { id: 3, name: "March" },
+    { id: 4, name: "April" },
+    { id: 5, name: "May" },
+    { id: 6, name: "June" },
+    { id: 7, name: "July" },
+    { id: 8, name: "August" },
+    { id: 9, name: "September" },
+    { id: 10, name: "October" },
+    { id: 11, name: "November" },
+    { id: 12, name: "December" }
+];
+
 const FirmDetails = (props) => {
     let firmServices = new FirmServices();
     const context = useContext(Context);
@@ -45,9 +60,10 @@ const FirmDetails = (props) => {
         firmContext.firm.payment_type
     );
     const [subdomain, setSubdomain] = useState(firmContext.firm.subdomain);
+    const [invoiceMonth, setInvoiceMonth] = useState(firmContext.firm.invoice_month);
     const [logoPanel, setLogoPanel] = useState(0); // 0 => Preview Panel, 1 => Resize Panel
 
-    useEffect(() => {        
+    useEffect(() => {
         getLogo(context.token);
     }, []);
 
@@ -71,6 +87,7 @@ const FirmDetails = (props) => {
             formData.append("payment_type", paymentTypeId);
             formData.append("amount", amount);
             formData.append("amount_currency", amountCurrencyId);
+            formData.append("invoice_month", invoiceMonth);
             formData.append("lat", latitude);
             formData.append("long", longitude);
 
@@ -371,6 +388,29 @@ const FirmDetails = (props) => {
                                         </select>
                                     </div>
                                 </Col>
+                                {
+                                    paymentTypeId === 1 &&
+                                    (
+                                        <Col lg="2" sm="6">
+                                            <div className="firm-details-form-group">
+                                                <label htmlFor="firm-invoice-month">
+                                                    Invoice Month
+                                                </label>
+                                                <select
+                                                    id="firm-invoice-month"
+                                                    name="firm-invoice-month"
+                                                    onChange={(_e) => setInvoiceMonth(_e.target.value)}
+                                                >
+                                                    {
+                                                        months.map(month => (
+                                                            <option value={month.id} selected={month.id === invoiceMonth ? true : false}>{month.name}</option>
+                                                        ))
+                                                    }
+                                                </select>
+                                            </div>
+                                        </Col>
+                                    )
+                                }
                             </Row>
                             <hr />
                             <Row>

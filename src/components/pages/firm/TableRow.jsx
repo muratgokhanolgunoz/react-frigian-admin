@@ -1,10 +1,13 @@
 /* eslint-disable eqeqeq */
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
+import PropTypes from 'prop-types';
 import TableButton from './TableButton';
 import { CgCloseR, CgCheckR } from 'react-icons/cg';
+import FirmContext from '../../../context/FirmContext';
 
 const TableRows = props => {
     const { firmDetails } = props
+    const firmContext = useContext(FirmContext);
     return (
         <Fragment>
             <tr>
@@ -14,8 +17,15 @@ const TableRows = props => {
                 <td>{firmDetails.package}</td>
                 <td style={{ textAlign: "center" }}>{firmDetails.max_users}</td>
                 <td>{firmDetails.payment}</td>
-                <td style={{ textAlign: "right" }}>{`${firmDetails.amount}`}</td>
-                <td style={{ textAlign: "center" }}>{firmDetails.amount_currency_name}</td>
+                {
+                    firmContext.priceVisibility &&
+                    (
+                        <Fragment>
+                            <td style={{ textAlign: "right" }}>{`${firmDetails.amount}`}</td>
+                            <td style={{ textAlign: "center" }}>{firmDetails.amount_currency_name}</td>
+                        </Fragment>
+                    )
+                }
                 <td style={{ textAlign: "center" }}>
                     {
                         firmDetails.active == 1
@@ -30,4 +40,9 @@ const TableRows = props => {
         </Fragment>
     )
 }
+
+TableRows.propTypes = {
+    firmDetails: PropTypes.object.isRequired
+}
+
 export default TableRows

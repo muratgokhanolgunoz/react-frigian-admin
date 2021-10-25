@@ -50,7 +50,9 @@ const Table = () => {
 
     return (
         <div id="firm-list">
-            <TableFilter setFilterCredentials={setFilterCredentials} />
+            <TableFilter
+                setFilterCredentials={setFilterCredentials}
+            />
             <BootstrapTable
                 striped
                 hover
@@ -66,16 +68,24 @@ const Table = () => {
                         <th>Package</th>
                         <th>Maximum Users</th>
                         <th>Payment Type</th>
-                        <th colSpan="2" style={{ textAlign: "center" }}>
-                            Amount
-                        </th>
+                        {
+                            firmContext.priceVisibility &&
+                            (
+                                <th colSpan="2" style={{ textAlign: "center" }}>
+                                    Amount
+                                </th>
+                            )
+                        }
                         <th>Active</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     {firmList.map((firm) => (
-                        <TableRow key={firm.firm_id} firmDetails={firm} />
+                        <TableRow
+                            key={firm.firm_id}
+                            firmDetails={firm}
+                        />
                     ))}
                 </tbody>
             </BootstrapTable>
