@@ -12,7 +12,7 @@ const FirmProvider = props => {
     const [filterName, setFilterName] = useState(undefined);
     const [filterPackage, setFilterPackage] = useState(undefined);
     const [filterPayment, setFilterPayment] = useState(undefined);
-    const [filterActive, setFilterActive] = useState(undefined);
+    const [filterActive, setFilterActive] = useState(1); // Default active firms
     const [priceVisibility, setPriceVisibility] = useState(false);
 
     return (

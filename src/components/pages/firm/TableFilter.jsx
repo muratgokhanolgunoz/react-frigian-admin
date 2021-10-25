@@ -31,7 +31,7 @@ const TableFilter = (props) => {
         firmContext.funcHandleSetFilterName(undefined);
         firmContext.funcHandleSetFilterPackage(undefined);
         firmContext.funcHandleSetFilterPayment(undefined);
-        firmContext.funcHanleSetFilterActive(undefined);
+        firmContext.funcHanleSetFilterActive(1); // Default value 1 for active firms
         firmContext.funcHandleSetPriceVisibility(false);
     }
 

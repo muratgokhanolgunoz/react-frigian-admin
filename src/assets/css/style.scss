@@ -60,7 +60,6 @@
   position: fixed;
   left: 0;
   top: 0;
-  box-shadow: 0 0 40px #eff1f7;
   z-index: 999;
   #sidebar-toggle-close {
     background-color: #000;
@@ -282,7 +281,9 @@
   text-align: center;
   position: fixed;
   bottom: 0;
-  background-color: var(--color-6);
+  background-color: var(--color-2);
+  color: var(--color-3);
+  letter-spacing: .4px;
   width: 100%;
   font-size: 0.9em;
   padding: 5px;

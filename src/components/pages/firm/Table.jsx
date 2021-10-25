@@ -56,7 +56,7 @@ const Table = () => {
             <BootstrapTable
                 striped
                 hover
-                size="xs"
+                size="sm"
                 responsive={true}
                 className="table-nowrap"
             >
