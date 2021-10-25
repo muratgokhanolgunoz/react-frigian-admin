@@ -388,29 +388,24 @@ const FirmDetails = (props) => {
                                         </select>
                                     </div>
                                 </Col>
-                                {
-                                    paymentTypeId === 1 &&
-                                    (
-                                        <Col lg="2" sm="6">
-                                            <div className="firm-details-form-group">
-                                                <label htmlFor="firm-invoice-month">
-                                                    Invoice Month
-                                                </label>
-                                                <select
-                                                    id="firm-invoice-month"
-                                                    name="firm-invoice-month"
-                                                    onChange={(_e) => setInvoiceMonth(_e.target.value)}
-                                                >
-                                                    {
-                                                        months.map(month => (
-                                                            <option value={month.id} selected={month.id === invoiceMonth ? true : false}>{month.name}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </div>
-                                        </Col>
-                                    )
-                                }
+                                <Col lg="2" sm="6">
+                                    <div className="firm-details-form-group">
+                                        <label htmlFor="firm-invoice-month">
+                                            Invoice Month
+                                        </label>
+                                        <select
+                                            id="firm-invoice-month"
+                                            name="firm-invoice-month"
+                                            onChange={(_e) => setInvoiceMonth(_e.target.value)}
+                                        >
+                                            {
+                                                months.map(month => (
+                                                    <option value={month.id} selected={month.id === invoiceMonth ? true : false}>{month.name}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
+                                </Col>
                             </Row>
                             <hr />
                             <Row>
