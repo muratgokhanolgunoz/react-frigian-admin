@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Context from "./Context";
 
-const Provider = props => {
+const Provider = (props) => {
     const [firms, setFirms] = useState([]);
     const [feeds, setFeeds] = useState([]);
     const [files, setFiles] = useState([]);
@@ -26,5 +26,5 @@ const Provider = props => {
             {props.children}
         </Context.Provider>
     );
-}
+};
 export default Provider;

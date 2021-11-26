@@ -1,158 +1,217 @@
 @import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
-
-/* ========== GENERAL STYLES ========== */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap");
 
 :root {
-  --color-1: #f89d13;
-  --color-2: #343a40;
-  --color-3: #f8f9fa;
-  --color-4: #da1d1d;
-  --color-5: #3abeff;
-  --color-6: #dddddd;
-  --color-7: #15993c;
+    --color-1: #f89d13;
+    --color-2: #343a40;
+    --color-3: #f8f9fa;
+    --color-4: #da1d1d;
+    --color-5: #3abeff;
+    --color-6: #dddddd;
+    --color-7: #15993c;
 
-  --font-family-1: "Gemunu Libre", sans-serif;
-  --font-family-2: "Rubik", sans-serif;
+    --font-family-1: "Gemunu Libre", sans-serif;
+    --font-family-2: "Rubik", sans-serif;
+    --font-family-3: "M PLUS 1", sans-serif;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
 }
 
 body {
-  background-color: #eff1f7;
-  font-family: var(--font-family-1);
-  font-size: 20px;
+    background-color: #eff1f7;
+    font-family: var(--font-family-1);
+    font-size: 20px;
 }
 
 .page-padding {
-  padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .table-nowrap {
-  white-space: nowrap;  
+    white-space: nowrap;
 }
 
 .font-weight-bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .font-size-09 {
-  font-size: 0.9em;
+    font-size: 0.9em;
 }
 
 .font-size-10 {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 .font-size-13 {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 /* ========== CUSTOM SCROLLBAR STYLES ========== */
 /* width */
 ::-webkit-scrollbar {
-  width: 3px;
+    width: 3px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+    background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: #555;
 }
 
 /* ========== TOASTIFY STYLES ========== */
 .Toastify__toast-container {
-  font-size: 0.7em;
+    font-size: 0.7em;
 }
 
 /* ========== BUTTON STYLES ========== */
 
 .button {
-  font-size: 0.9em;
-  padding: 0 10px;
+    font-size: 0.9em;
+    padding: 0 10px;
 }
 
 .button-1 {
-  background-color: var(--color-6);
-  color: var(--color-2);
-  transition: all 0.5s;
-  &:hover {
-    background-color: var(--color-2);
-    color: var(--color-3);
+    background-color: var(--color-6);
+    color: var(--color-2);
     transition: all 0.5s;
-  }
+    &:hover {
+        background-color: var(--color-2);
+        color: var(--color-3);
+        transition: all 0.5s;
+    }
 }
 
 .button-1-no-hover {
-  background-color: var(--color-6);
-  color: var(--color-2);
+    background-color: var(--color-6);
+    color: var(--color-2);
 }
 
 .button-2 {
-  background-color: var(--color-5);
-  color: var(--color-3);
-  transition: all 0.5s;
-  &:hover {
-    background-color: var(--color-2);
+    background-color: var(--color-5);
     color: var(--color-3);
     transition: all 0.5s;
-  }
+    &:hover {
+        background-color: var(--color-2);
+        color: var(--color-3);
+        transition: all 0.5s;
+    }
 }
 
 .button-3 {
-  background-color: var(--color-2);
-  color: var(--color-3);
-  transition: all 0.5s;
-  &:hover {
     background-color: var(--color-2);
     color: var(--color-3);
     transition: all 0.5s;
-  }
+    &:hover {
+        background-color: var(--color-2);
+        color: var(--color-3);
+        transition: all 0.5s;
+    }
 }
 
 .button-4 {
-  background-color: var(--color-7);
-  color: var(--color-3);
-  transition: all 0.5s;
-  &:hover {
-    background-color: var(--color-2);
+    background-color: var(--color-7);
     color: var(--color-3);
     transition: all 0.5s;
-  }
+    &:hover {
+        background-color: var(--color-2);
+        color: var(--color-3);
+        transition: all 0.5s;
+    }
 }
 
 .button-5 {
-  background-color: var(--color-4);
-  color: var(--color-3);
-  transition: all 0.5s;
-  &:hover {
-    background-color: var(--color-2);
+    background-color: var(--color-4);
     color: var(--color-3);
     transition: all 0.5s;
-  }
+    &:hover {
+        background-color: var(--color-2);
+        color: var(--color-3);
+        transition: all 0.5s;
+    }
 }
 
 .button-6 {
-  background-color: var(--color-1);
-  color: var(--color-3);
-  transition: all 0.5s;
-  &:hover {
-    background-color: var(--color-2);
+    background-color: var(--color-1);
     color: var(--color-3);
     transition: all 0.5s;
-  }
+    &:hover {
+        background-color: var(--color-2);
+        color: var(--color-3);
+        transition: all 0.5s;
+    }
+}
+
+/* ========== FORM STYLES ========== */
+.custom-form-group {
+    margin-bottom: 15px;
+    label {
+        width: 100% !important;
+    }
+    input {
+        border: 1px solid lightgray !important;
+        width: 100%;
+        color: #333;
+        padding: 5px;
+        &:active {
+            outline: none !important;
+        }
+        &:focus {
+            outline: none !important;
+        }
+    }
+    textarea {
+        border: 1px solid lightgray !important;
+        width: 100%;
+        color: #333;
+        padding: 5px;
+        &:active {
+            outline: none !important;
+        }
+        &:focus {
+            outline: none !important;
+        }
+    }
+    input[type="checkbox"] {
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+    }
+    select {
+        width: 100% !important;
+        padding: 5px;
+        background-color: #fff;
+        border: 1px solid lightgray;
+        height: 40px;
+        &:active {
+            outline: none;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    span {
+        float: right;
+        cursor: pointer;
+        background-color: var(--color-1);
+        display: block;
+        text-align: center;
+        padding: 0 15px;
+        margin-top: 5px;
+    }
 }

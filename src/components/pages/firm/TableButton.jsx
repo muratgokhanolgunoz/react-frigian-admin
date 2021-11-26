@@ -15,7 +15,8 @@ const TableButton = (props) => {
                     firmContext.funcHandleSetSelectedFirm(firm);
                 }}
             >
-                Details &nbsp; <AiOutlineArrowRight style={{ marginTop: "-3px" }} />
+                Details &nbsp;{" "}
+                <AiOutlineArrowRight style={{ marginTop: "-3px" }} />
             </button>
         </div>
     );

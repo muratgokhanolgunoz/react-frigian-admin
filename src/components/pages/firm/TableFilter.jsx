@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import FirmContext from "../../../context/FirmContext";
-import Button from "./Button";
+import Button from "../../../common/button/Button";
 import { Col, Row, Form } from "react-bootstrap";
-import { FcClearFilters } from 'react-icons/fc';
+import { FcClearFilters } from "react-icons/fc";
 
 const TableFilter = (props) => {
     const firmContext = useContext(FirmContext);
@@ -13,11 +13,25 @@ const TableFilter = (props) => {
     useEffect(() => {
         setFilterCredentials({
             firm_name: firmContext.filterName,
-            package_id: firmContext.filterPackage === -1 ? undefined : firmContext.filterPackage,
-            payment_type: firmContext.filterPayment === -1 ? undefined : firmContext.filterPayment,
-            active: firmContext.filterActive === -1 ? undefined : firmContext.filterActive
+            package_id:
+                firmContext.filterPackage === -1
+                    ? undefined
+                    : firmContext.filterPackage,
+            payment_type:
+                firmContext.filterPayment === -1
+                    ? undefined
+                    : firmContext.filterPayment,
+            active:
+                firmContext.filterActive === -1
+                    ? undefined
+                    : firmContext.filterActive,
         });
-    }, [firmContext.filterName, firmContext.filterPackage, firmContext.filterPayment, firmContext.filterActive])
+    }, [
+        firmContext.filterName,
+        firmContext.filterPackage,
+        firmContext.filterPayment,
+        firmContext.filterActive,
+    ]);
 
     const handleSetFilterName = (_value) => {
         if (_value.length === 0) {
@@ -25,7 +39,7 @@ const TableFilter = (props) => {
             return;
         }
         firmContext.funcHandleSetFilterName(_value);
-    }
+    };
 
     const clearFilter = () => {
         firmContext.funcHandleSetFilterName(undefined);
@@ -33,7 +47,7 @@ const TableFilter = (props) => {
         firmContext.funcHandleSetFilterPayment(undefined);
         firmContext.funcHanleSetFilterActive(1); // Default value 1 for active firms
         firmContext.funcHandleSetPriceVisibility(false);
-    }
+    };
 
     return (
         <div id="table-filter">
@@ -42,15 +56,14 @@ const TableFilter = (props) => {
                     <br />
                     <Button
                         icon={<FcClearFilters />}
-                        color={"button-1-no-hover"}
-                        styles={"logo-button"}
+                        styles={"logo-button button-1-no-hover"}
                         tooltipPlacement={"top"}
                         tooltipText={"Clear Filter"}
                         click={clearFilter}
                     />
                 </Col>
                 <Col lg={4}>
-                    <div className="firm-details-form-group">
+                    <div className="custom-form-group">
                         <label htmlFor="firm-name">
                             <b>Name</b>
                         </label>
@@ -58,57 +71,147 @@ const TableFilter = (props) => {
                             id="firm-name"
                             name="firm-name"
                             type="text"
-                            value={firmContext.filterName === undefined ? "" : firmContext.filterName}
-                            onChange={(_e) => handleSetFilterName(_e.target.value)}
+                            value={
+                                firmContext.filterName === undefined
+                                    ? ""
+                                    : firmContext.filterName
+                            }
+                            onChange={(_e) =>
+                                handleSetFilterName(_e.target.value)
+                            }
                         />
                     </div>
                 </Col>
                 <Col lg={2}>
-                    <div className="firm-details-form-group">
+                    <div className="custom-form-group">
                         <label htmlFor="firm-package">
                             <b>Package</b>
                         </label>
                         <select
                             id="firm-package"
                             name="firm-package"
-                            onChange={(_e) => firmContext.funcHandleSetFilterPackage(parseInt(_e.target.value))}
+                            onChange={(_e) =>
+                                firmContext.funcHandleSetFilterPackage(
+                                    parseInt(_e.target.value)
+                                )
+                            }
                         >
-                            <option value="-1" selected={firmContext.filterPackage === undefined ? true : false}>All</option>
+                            <option
+                                value="-1"
+                                selected={
+                                    firmContext.filterPackage === undefined
+                                        ? true
+                                        : false
+                                }
+                            >
+                                All
+                            </option>
                             {firmContext.packages.map((pack) => (
-                                <option value={pack.id} selected={pack.id === firmContext.filterPackage ? true : false}>{pack.name}</option>
+                                <option
+                                    value={pack.id}
+                                    selected={
+                                        pack.id === firmContext.filterPackage
+                                            ? true
+                                            : false
+                                    }
+                                >
+                                    {pack.name}
+                                </option>
                             ))}
                         </select>
                     </div>
                 </Col>
                 <Col lg={1}>
-                    <div className="firm-details-form-group">
+                    <div className="custom-form-group">
                         <label htmlFor="firm-payment">
                             <b>Payment</b>
                         </label>
                         <select
                             id="firm-payment"
                             name="firm-payment"
-                            onChange={(_e) => firmContext.funcHandleSetFilterPayment(parseInt(_e.target.value))}
+                            onChange={(_e) =>
+                                firmContext.funcHandleSetFilterPayment(
+                                    parseInt(_e.target.value)
+                                )
+                            }
                         >
-                            <option value="-1" selected={firmContext.filterPayment === undefined ? true : false}>All</option>
-                            <option value="1" selected={firmContext.filterPayment === 1 ? true : false}>Yearly</option>
-                            <option value="2" selected={firmContext.filterPayment === 2 ? true : false}>Monthly</option>
+                            <option
+                                value="-1"
+                                selected={
+                                    firmContext.filterPayment === undefined
+                                        ? true
+                                        : false
+                                }
+                            >
+                                All
+                            </option>
+                            <option
+                                value="1"
+                                selected={
+                                    firmContext.filterPayment === 1
+                                        ? true
+                                        : false
+                                }
+                            >
+                                Yearly
+                            </option>
+                            <option
+                                value="2"
+                                selected={
+                                    firmContext.filterPayment === 2
+                                        ? true
+                                        : false
+                                }
+                            >
+                                Monthly
+                            </option>
                         </select>
                     </div>
                 </Col>
                 <Col lg={1}>
-                    <div className="firm-details-form-group">
+                    <div className="custom-form-group">
                         <label htmlFor="firm-active">
                             <b>Status</b>
                         </label>
                         <select
                             id="firm-active"
                             name="firm-active"
-                            onChange={(_e) => firmContext.funcHanleSetFilterActive(parseInt(_e.target.value))}
+                            onChange={(_e) =>
+                                firmContext.funcHanleSetFilterActive(
+                                    parseInt(_e.target.value)
+                                )
+                            }
                         >
-                            <option value="-1" selected={firmContext.filterActive === undefined ? true : false}>All</option>
-                            <option value="1" selected={firmContext.filterActive === 1 ? true : false}>Active</option>
-                            <option value="0" selected={firmContext.filterActive === 0 ? true : false}>InActive</option>
+                            <option
+                                value="-1"
+                                selected={
+                                    firmContext.filterActive === undefined
+                                        ? true
+                                        : false
+                                }
+                            >
+                                All
+                            </option>
+                            <option
+                                value="1"
+                                selected={
+                                    firmContext.filterActive === 1
+                                        ? true
+                                        : false
+                                }
+                            >
+                                Active
+                            </option>
+                            <option
+                                value="0"
+                                selected={
+                                    firmContext.filterActive === 0
+                                        ? true
+                                        : false
+                                }
+                            >
+                                InActive
+                            </option>
                         </select>
                     </div>
                 </Col>
@@ -117,11 +220,15 @@ const TableFilter = (props) => {
                     <Form.Check
                         id="firm-price-visibility"
                         name="firm-price-visibility"
-                        label={`Details ${firmContext.priceVisibility ? 'Show' : 'Hide'}`}
-                        type={'checkbox'}
+                        label="Details"
+                        type={"checkbox"}
                         defaultChecked={firmContext.priceVisibility}
                         checked={firmContext.priceVisibility}
-                        onChange={(_e) => firmContext.funcHandleSetPriceVisibility(_e.target.checked)}
+                        onChange={(_e) =>
+                            firmContext.funcHandleSetPriceVisibility(
+                                _e.target.checked
+                            )
+                        }
                     />
                 </Col>
             </Row>
@@ -131,6 +238,6 @@ const TableFilter = (props) => {
 
 TableFilter.propTypes = {
     setFilterCredentials: PropTypes.object.isRequired,
-}
+};
 
 export default TableFilter;

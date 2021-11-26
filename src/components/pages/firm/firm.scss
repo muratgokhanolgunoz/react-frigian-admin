@@ -1,0 +1,46 @@
+#firm-list {
+    padding: 5px;
+}
+
+#firm-details-area {
+    padding: 30px 0;
+}
+
+#edit-logo {
+    border: 1px solid lightgray;
+    margin-top: 10px;
+}
+
+#logo {
+    img {
+        width: 300px !important;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+}
+
+.logo-buttons {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.logo-button {
+    padding: 2px 10px 5px 10px !important;
+    display: inline-block;
+    margin: 5px;
+}
+
+#crop-preview {
+    text-align: center;
+    img {
+        border: 1px solid lightgray;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.cursor-private {
+    cursor: no-drop;
+}

@@ -1,75 +1,38 @@
-import React, { Fragment, useContext } from 'react';
-import Context from '../../../../../../context/Context';
-import { FaShip, FaFlagCheckered, FaTag, FaEnvelope } from 'react-icons/fa';
+import React, { useContext } from "react";
+import Context from "../../../../../../context/Context";
+import FileStatisticsItem from "./FileStatisticsItem";
+import { FaTag, FaShip, FaFlagCheckered, FaEnvelope } from "react-icons/fa";
 
 const FileStatistics = () => {
-
     const context = useContext(Context);
 
     return (
         <div id="sidebar-file-statistics">
-            {
-                context.files.map((file, i) => (
-                    <Fragment key={i}>
-                        <div className="file-statistics-box">
-                            <div className="file-statistics-item file-statistics-margin-left">
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-icon">
-                                        <FaTag />
-                                    </span>
-                                    <span className="file-statistics-text">{file.offer}</span>
-                                </div>
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-title">Created Offer</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="file-statistics-box">
-                            <div className="file-statistics-item file-statistics-margin-right">
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-icon">
-                                        <FaShip />
-                                    </span>
-                                    <span className="file-statistics-text">{file.operation}</span>
-                                </div>
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-title">Operation Start</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="file-statistics-box">
-                            <div className="file-statistics-item file-statistics-margin-left">
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-icon">
-                                        <FaFlagCheckered />
-                                    </span>
-                                    <span className="file-statistics-text">{file.done}</span>
-                                </div>
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-title">Operation Done</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="file-statistics-box">
-                            <div className="file-statistics-item file-statistics-margin-right">
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-icon">
-                                        <FaEnvelope />
-                                    </span>
-                                    <span className="file-statistics-text">{file.messages}</span>
-                                </div>
-                                <div className="file-statistics-row">
-                                    <span className="file-statistics-title">Messages Sent</span>
-                                </div>
-                            </div>
-                        </div>
-                    </Fragment>
-                ))
-            }
+            {context.files.map((file, i) => (
+                <div key={i}>
+                    <FileStatisticsItem
+                        icon={<FaTag />}
+                        value={file.offer}
+                        text="Created Offer"
+                    />
+                    <FileStatisticsItem
+                        icon={<FaShip />}
+                        value={file.operation}
+                        text="Operation Start"
+                    />
+                    <FileStatisticsItem
+                        icon={<FaFlagCheckered />}
+                        value={file.done}
+                        text="Operation Done"
+                    />
+                    <FileStatisticsItem
+                        icon={<FaEnvelope />}
+                        value={file.messages}
+                        text="Messages Sent"
+                    />
+                </div>
+            ))}
         </div>
-    )
-}
+    );
+};
 export default FileStatistics;

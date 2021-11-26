@@ -11,7 +11,7 @@ import LogoCropper from "./LogoCropper";
 import { FiCheck } from "react-icons/fi";
 import { VscChromeClose } from "react-icons/vsc";
 import { Col, Row, Container } from "react-bootstrap";
-import "./_firm.scss";
+import "./firm.scss";
 
 const months = [
     { id: 1, name: "January" },
@@ -28,7 +28,7 @@ const months = [
     { id: 12, name: "December" }
 ];
 
-const FirmDetails = (props) => {
+const FirmDetails = () => {
     let firmServices = new FirmServices();
     const context = useContext(Context);
     const firmContext = useContext(FirmContext);
@@ -159,7 +159,7 @@ const FirmDetails = (props) => {
                             <br />
                             <Row>
                                 <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-id">ID</label>
                                         <input
                                             id="firm-id"
@@ -173,7 +173,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="3" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-subdomain">Subdomain</label>
                                         <input
                                             id="firm-subdomain"
@@ -188,7 +188,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="7" sm="9">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-name">Name</label>
                                         <input
                                             id="firm-name"
@@ -202,7 +202,7 @@ const FirmDetails = (props) => {
                             </Row>
                             <Row>
                                 <Col lg="4" sm="9">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-name">eMail</label>
                                         <input
                                             id="firm-mail"
@@ -214,7 +214,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="3" sm="3">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-tax-number">Tax Number</label>
                                         <input
                                             id="firm-tax-number"
@@ -226,7 +226,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="3" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-country">Country</label>
                                         <select
                                             id="firm-country"
@@ -246,7 +246,7 @@ const FirmDetails = (props) => {
                             <hr />
                             <Row>
                                 <Col lg="3" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-integrators">Integrator</label>
                                         <select
                                             id="firm-integrators"
@@ -267,7 +267,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-currency">Currency</label>
                                         <select
                                             id="firm-currency"
@@ -286,7 +286,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="3" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-package">Package</label>
                                         <select
                                             id="firm-package"
@@ -305,7 +305,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-max-users">Maximum Users</label>
                                         <input
                                             id="firm-max-users"
@@ -319,7 +319,7 @@ const FirmDetails = (props) => {
                             </Row>
                             <Row>
                                 <Col lg="3" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-account-id">Account ID</label>
                                         <input
                                             id="firm-account-id"
@@ -331,7 +331,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-payment">Payment</label>
                                         <select
                                             id="firm-payment"
@@ -354,7 +354,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-amount">Amount</label>
                                         <input
                                             id="firm-amount"
@@ -366,7 +366,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-amount-currency">
                                             Amount Currency
                                         </label>
@@ -389,7 +389,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-invoice-month">
                                             Invoice Month
                                         </label>
@@ -409,9 +409,9 @@ const FirmDetails = (props) => {
                             </Row>
                             <hr />
                             <Row>
-                                <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
-                                        <label htmlFor="firm-database-usage">Database Usage</label>
+                                <Col lg="3" sm="6">
+                                    <div className="custom-form-group">
+                                        <label htmlFor="firm-database-usage">Database Usage [GB]</label>
                                         <input
                                             id="firm-database-usage"
                                             name="firm-database-usage"
@@ -426,8 +426,8 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="3" sm="6">
-                                    <div className="firm-details-form-group">
-                                        <label htmlFor="firm-max-storage">Maximum Storage</label>
+                                    <div className="custom-form-group">
+                                        <label htmlFor="firm-max-storage">Maximum Storage [GB]</label>
                                         <input
                                             id="firm-max-storage"
                                             name="firm-max-storage"
@@ -437,9 +437,9 @@ const FirmDetails = (props) => {
                                         />
                                     </div>
                                 </Col>
-                                <Col lg="2" sm="6">
-                                    <div className="firm-details-form-group">
-                                        <label htmlFor="firm-storage-usage">Storage Usage</label>
+                                <Col lg="3" sm="6">
+                                    <div className="custom-form-group">
+                                        <label htmlFor="firm-storage-usage">Storage Usage [GB]</label>
                                         <input
                                             id="firm-storage-usage"
                                             name="firm-storage-usage"
@@ -459,7 +459,7 @@ const FirmDetails = (props) => {
                         <Col lg="4">
                             <Row>
                                 <Col lg={{ offset: 8, span: 4 }}>
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-active">Status</label>
                                         <select id="firm-active" name="firm-active" onChange={(_e) => setActive(_e.target.value)}>
                                             <option value="0" selected={active === 0 ? true : false}>Inactive</option>
@@ -489,7 +489,7 @@ const FirmDetails = (props) => {
                             <br />
                             <Row>
                                 <Col lg="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-latitude">Latitude</label>
                                         <input
                                             id="firm-latitude"
@@ -501,7 +501,7 @@ const FirmDetails = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg="6">
-                                    <div className="firm-details-form-group">
+                                    <div className="custom-form-group">
                                         <label htmlFor="firm-longitude">Longitude</label>
                                         <input
                                             id="firm-longitude"
