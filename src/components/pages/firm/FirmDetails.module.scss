@@ -1,0 +1,13 @@
+.firmDetails {
+    background-color: #fff;
+    padding: 30px 0;
+    .firmDetailsArea {
+        .editLogo {
+            border: 1px solid lightgray;
+            margin-top: 10px;
+        }
+        .cursorPrivate {
+            cursor: no-drop;
+        }
+    }
+}

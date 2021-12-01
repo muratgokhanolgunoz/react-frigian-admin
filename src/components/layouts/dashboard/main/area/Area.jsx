@@ -2,11 +2,12 @@ import React from "react";
 import { Switch, Route } from "react-router";
 import Home from "../../../../pages/home/Index";
 import Firms from "../../../../pages/firm/Index";
+import style from "./Area.module.scss";
 
-const Area = () => {
+const Area = (_) => {
     return (
-        <div id="area">
-            <div id="area-lower">
+        <div className={style.area}>
+            <div className={style.areaLower}>
                 <Switch>
                     <Route path="/" exact>
                         <Home />

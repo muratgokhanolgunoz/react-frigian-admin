@@ -1,0 +1,38 @@
+.feedMessage {
+    font-family: var(--font-family-2);
+    width: 100% !important;
+    min-height: 30px;
+    display: block;
+    .message {
+        min-width: 150px;
+        width: 300px;
+        p {
+            font-size: 0.8em;
+            line-height: 21px;
+            letter-spacing: 0.5px;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 0;
+            background-color: var(--color-3);
+            color: var(--color-3);
+            padding: 10px;
+            text-align: left;
+        }
+        span {
+            font-size: 0.6em;
+            width: 100%;
+            text-align: right;
+            display: block;
+            font-weight: bold;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .feedMessage {
+        .message {
+            min-width: 100% !important;
+            width: 100% !important;
+        }
+    }
+}

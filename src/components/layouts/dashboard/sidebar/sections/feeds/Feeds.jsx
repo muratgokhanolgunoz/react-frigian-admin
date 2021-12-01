@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
 import Context from "../../../../../../context/Context";
 import FeedRow from "./FeedRow";
-import "./feeds.scss";
+import style from "./Feed.module.scss";
 
 const Feeds = (_) => {
     const context = useContext(Context);
 
     return (
-        <div id="sidebar-feeds">
-            <div id="feed-title">
+        <div className={style.sidebarFeeds}>
+            <div className={style.feedTitle}>
                 <span>FRIGIAN FEEDS</span>
             </div>
-            <div id="feed-body">
+            <div className={style.feedBody}>
                 {context.feeds.map((feed) => (
                     <FeedRow key={feed.feedback_id} feed={feed} />
                 ))}

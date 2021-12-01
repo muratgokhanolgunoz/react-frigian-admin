@@ -6,7 +6,7 @@ const Provider = (props) => {
     const [feeds, setFeeds] = useState([]);
     const [files, setFiles] = useState([]);
     const [token, setToken] = useState("");
-    const [zoom, setZoom] = useState(6.8);
+    const [zoom, setZoom] = useState(6);
 
     return (
         <Context.Provider

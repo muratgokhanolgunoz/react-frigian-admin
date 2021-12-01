@@ -1,0 +1,80 @@
+.navbar {
+    width: 100%;
+    background-color: #fff;
+    padding-left: 270px;
+    height: 70px;
+    font-family: var(--font-family-3);
+    font-size: 0.85em;
+    .sidebarToggleOpen {
+        cursor: pointer;
+        float: left;
+        &:after {
+            content: "SIDEBAR";
+        }
+        svg {
+            font-size: 35px;
+            margin: 10px;
+        }
+    }
+    .navToggleOpen {
+        cursor: pointer;
+        float: right;
+        &:before {
+            content: "MENU";
+        }
+        svg {
+            font-size: 35px;
+            margin: 10px;
+        }
+    }
+    .nav {
+        float: right;
+        z-index: 999;
+        .navToggleClose {
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: none;
+            text-align: center;
+            svg {
+                padding: 10px;
+                font-size: 2em;
+            }
+        }
+        ul li {
+            display: inline-block;
+            padding: 20px 10px;
+            a {
+                text-decoration: none;
+                color: var(--color-2);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .navbar {
+        padding-left: 0 !important;
+    }
+
+    .nav {
+        position: fixed;
+        width: 270px;
+        right: 0;
+        background-color: #fff;
+        height: 100vh;
+        box-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
+        ul {
+            li {
+                display: block !important;
+                padding-left: 0 !important;
+                padding-top: 0 !important;
+            }
+        }
+        .navToggleClose {
+            margin-bottom: 25px;
+        }
+    }
+}

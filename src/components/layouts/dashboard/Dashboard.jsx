@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 const Dashboard = ({ left, right }) => {
     return (
-        <div id="dashboard">
-            <section id="section-sidebar">{left}</section>
-            <section id="section-main">{right}</section>
+        <div className="dashboard">
+            <section className="section-sidebar">{left}</section>
+            <section className="section-main">{right}</section>
         </div>
     );
 };

@@ -1,17 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import style from "./FileStatisticsItem.module.scss";
 
 const FileStatisticsItem = ({ icon, value, text }) => {
     return (
         <>
-            <div className="file-statistics-box">
-                <div className="file-statistics-item">
-                    <div className="file-statistics-row">
-                        <span className="file-statistics-icon">{icon}</span>
-                        <span className="file-statistics-text">{value}</span>
+            <div className={style.fileStatisticsBox}>
+                <div className={style.fileStatisticsItem}>
+                    <div className={style.fileStatisticsRow}>
+                        <span className={style.fileStatisticsIcon}>{icon}</span>
+                        <span className={style.fileStatisticsText}>
+                            {value}
+                        </span>
                     </div>
-                    <div className="file-statistics-row">
-                        <span className="file-statistics-title">{text}</span>
+                    <div className={style.fileStatisticsRow}>
+                        <span className={style.fileStatisticsTitle}>
+                            {text}
+                        </span>
                     </div>
                 </div>
             </div>

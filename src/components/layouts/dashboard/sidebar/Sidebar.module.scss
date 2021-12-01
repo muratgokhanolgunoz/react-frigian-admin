@@ -1,0 +1,29 @@
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    background-color: var(--color-2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    .sidebarToggleClose {
+        background-color: #000;
+        cursor: pointer;
+        float: right;
+        svg {
+            color: #fff;
+            padding: 10px;
+            font-size: 2em;
+        }
+    }
+    .sidebarLogo {
+        padding: 20px;
+        width: 200px;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+    .sidebarBody {
+        overflow-y: auto;
+    }
+}

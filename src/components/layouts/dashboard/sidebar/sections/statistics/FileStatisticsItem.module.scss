@@ -1,0 +1,31 @@
+.fileStatisticsBox {
+    padding: 5px;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+    .fileStatisticsItem {
+        background-color: #fff;
+        .fileStatisticsRow {
+            .fileStatisticsIcon {
+                svg {
+                    margin-right: 20px;
+                    margin-top: -20px;
+                    font-size: 1.7em;
+                }
+            }
+            .fileStatisticsText {
+                font-size: 1.7em;
+            }
+            .fileStatisticsTitle {
+                font-size: 0.97em;
+                font-weight: bold;
+            }
+        }
+    }
+    .fileStatisticsMarginRight {
+        margin-right: 5px;
+    }
+    .fileStatisticsMarginLeft {
+        margin-left: 5px;
+    }
+}

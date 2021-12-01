@@ -1,0 +1,13 @@
+.resetButton {
+    button {
+        background-color: #fff;
+        padding: 7px 12px 7px 12px;
+        color: #000;
+        margin: 10px !important;
+        position: absolute;
+        z-index: 1;
+        -webkit-box-shadow: 0px 0px 35px -12px rgba(112, 112, 112, 1);
+        -moz-box-shadow: 0px 0px 35px -12px rgba(112, 112, 112, 1);
+        box-shadow: 0px 0px 35px -12px rgba(112, 112, 112, 1);
+    }
+}

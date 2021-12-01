@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import style from "./FeedMessage.module.scss";
 
 const FeedMessage = ({ status, note, date, user, wrap }) => {
     return (
-        <div className="feed-message">
-            <div className="message" style={{ float: wrap }}>
+        <div className={style.feedMessage}>
+            <div className={style.message} style={{ float: wrap }}>
                 <p
                     style={{
                         backgroundColor: `var(--color-${

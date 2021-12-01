@@ -1,10 +1,8 @@
 import { showToast } from "../core/functions";
-import MapServices from "../services/MapServices";
-let mapServices = new MapServices();
+import { getFirmList } from "../services/MapServices";
 
 export const getMapData = (_context) => {
-    mapServices
-        .getFirmList()
+    getFirmList()
         .then((response) => {
             _context.funcHandleSetFirms(response.data.firms);
             _context.funcHandleSetFeeds(response.data.feeds);

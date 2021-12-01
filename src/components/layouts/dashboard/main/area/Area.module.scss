@@ -1,0 +1,13 @@
+.area {
+    margin: 30px;
+    padding-left: 270px;
+    .area-lower {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .area {
+        padding-left: 0 !important;
+    }
+}

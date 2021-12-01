@@ -45,6 +45,15 @@ const Button = ({
     );
 };
 
+Button.defaultProps = {
+    icon: null,
+    value: "",
+    styles: "",
+    click: null,
+    tooltipText: "",
+    tooltipPlacement: "",
+};
+
 Button.propTypes = {
     icon: PropTypes.element,
     value: PropTypes.string,

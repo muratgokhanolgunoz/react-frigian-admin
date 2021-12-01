@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useContext } from 'react';
-import Context from '../../../context/Context';
-import { showToast } from '../../../core/functions';
-import { authentication } from '../../../helpers/authentication';
+import React, { useState, useContext } from "react";
+import Context from "../../../context/Context";
+import { showToast } from "../../../core/functions";
+import { authentication } from "../../../helpers/authentication";
+import style from "./Login.module.scss";
 
 const Login = () => {
     const context = useContext(Context);
@@ -19,31 +20,45 @@ const Login = () => {
         payload.append("captcha", "");
         payload.append("secondid", "");
 
-        authentication.login(payload)
+        authentication
+            .login(payload)
             .then((response) => {
-                if (response.data.token !== undefined && response.data.token !== null && response.data.token !== "") {
+                if (
+                    response.data.token !== undefined &&
+                    response.data.token !== null &&
+                    response.data.token !== ""
+                ) {
                     context.funcHandleSetToken(response.data.token);
                 } else {
-                    showToast("top-right", "Authentication failed", "error", 10000);
+                    showToast(
+                        "top-right",
+                        "Authentication failed",
+                        "error",
+                        10000
+                    );
                 }
             })
             .catch((response) => {
                 console.warn(response);
                 showToast("top-right", response, "error", 10000);
-            })
-    }
+            });
+    };
 
     return (
-        <div id="login">
-            <img id="login-form-img" src="https://frigian.net/assets/img/frigian-dark.png" alt=""></img>
+        <div className={style.login}>
+            <img
+                className={style.loginFormImg}
+                src="https://frigian.net/assets/img/frigian-dark.png"
+                alt=""
+            ></img>
 
-            <form
-                id="login-form"
+            <form                
+                className={style.loginForm}
                 method="post"
                 encType="multipart/form-data"
                 onSubmit={(e) => handleLogin(e)}
             >
-                <div className="login-form-row">
+                <div className={style.loginFormRow}>
                     <label htmlFor="login-form-username">eMail</label>
                     <input
                         id="login-form-username"
@@ -54,7 +69,7 @@ const Login = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div className="login-form-row">
+                <div className={style.loginFormRow}>
                     <label htmlFor="login-form-password">Password</label>
                     <input
                         id="login-form-password"
@@ -65,7 +80,7 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <div className="login-form-row">
+                <div className={style.loginFormRow}>
                     <button
                         id="login-form-submit"
                         className="login-form-submit"
@@ -77,5 +92,5 @@ const Login = () => {
             </form>
         </div>
     );
-}
+};
 export default Login;

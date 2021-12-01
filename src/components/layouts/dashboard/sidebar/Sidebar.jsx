@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import Feeds from "./sections/feeds/Feeds";
-import FileStatistics from "./sections/statistics/FileStatistics";
 import { Image } from "react-bootstrap";
 import { VscChromeClose } from "react-icons/vsc";
+import style from "./Sidebar.module.scss";
+import Feeds from "./sections/feeds/Feeds";
+import FileStatistics from "./sections/statistics/FileStatistics";
 
 const Sidebar = (_) => {
     useEffect(() => {
@@ -32,19 +33,23 @@ const Sidebar = (_) => {
     };
 
     return (
-        <div id="sidebar">
-            <div id="sidebar-toggle-close" onClick={() => sidebarClose()}>
+        <div id="sidebar" className={style.sidebar}>
+            <div
+                id="sidebar-toggle-close"
+                className={style.sidebarToggleClose}
+                onClick={() => sidebarClose()}
+            >
                 <VscChromeClose />
             </div>
-            <div id="sidebar-logo">
+            <div id="sidebar-logo" className={style.sidebarLogo}>
                 <Image
-                    src="https://frigian.net/assets/img/frigian-light.png"
+                    src="./assets/img/frigian-light.png"
                     alt=""
                     fluid
                 ></Image>
             </div>
 
-            <div id="sidebar-body">
+            <div id="sidebar-body" className={style.sidebarBody}>
                 <FileStatistics />
                 <Feeds />
             </div>

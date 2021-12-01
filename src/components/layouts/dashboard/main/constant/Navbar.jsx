@@ -6,6 +6,7 @@ import Context from "../../../../../context/Context";
 import { authentication } from "../../../../../helpers/authentication";
 import { AiOutlinePoweroff } from "react-icons/ai";
 import { VscChromeClose } from "react-icons/vsc";
+import style from "./Navbar.module.scss";
 
 const Navbar = () => {
     let context = useContext(Context);
@@ -65,15 +66,15 @@ const Navbar = () => {
     };
 
     return (
-        <div id="navbar">
-            <div id="sidebar-toggle-open" onClick={() => sidebarOpen()}>
+        <div id="navbar" className={style.navbar}>
+            <div id="sidebar-toggle-open" className={style.sidebarToggleOpen} onClick={() => sidebarOpen()}>
                 <VscListSelection />
             </div>
-            <div id="nav-toggle-open" onClick={() => navOpen()}>
+            <div id="nav-toggle-open" className={style.navToggleOpen} onClick={() => navOpen()}>
                 <VscListSelection />
             </div>
-            <div id="nav">
-                <div id="nav-toggle-close" onClick={() => navclose()}>
+            <div id="nav" className={style.nav}>
+                <div id="nav-toggle-close" className={style.navToggleClose} onClick={() => navclose()}>
                     <VscChromeClose />
                 </div>
                 <ul>

@@ -50,13 +50,13 @@ const TableFilter = (props) => {
     };
 
     return (
-        <div id="table-filter">
+        <div className="table-filter">
             <Row>
                 <Col lg={1}>
                     <br />
                     <Button
                         icon={<FcClearFilters />}
-                        styles={"logo-button button-1-no-hover"}
+                        styles={"p-3 button-1-no-hover"}
                         tooltipPlacement={"top"}
                         tooltipText={"Clear Filter"}
                         click={clearFilter}

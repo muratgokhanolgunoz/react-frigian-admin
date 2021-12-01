@@ -5,6 +5,7 @@ import FeedMessage from "./FeedMessage";
 import FeedAnswer from "./FeedAnswer";
 import Modal from "../../../../../../common/modal/Modal";
 import { AiOutlineCheck } from "react-icons/ai";
+import style from "./FeedRow.module.scss";
 
 const FeedRow = ({ feed }) => {
     const [modalState, setModalState] = useState(false);
@@ -14,11 +15,11 @@ const FeedRow = ({ feed }) => {
     };
 
     return (
-        <div className="feed-row" onClick={() => toggleModal(true)}>
-            <div className="feed-row-wrapper">
+        <div className={style.feedRow} onClick={() => toggleModal(true)}>
+            <div>
                 <FeedHeader color={feed.color} companyName={feed.name} />
                 {feed.replied && (
-                    <div className="feed-right">
+                    <div className={style.feedRight}>
                         <span>
                             <AiOutlineCheck />
                         </span>
@@ -29,7 +30,7 @@ const FeedRow = ({ feed }) => {
             {modalState && (
                 <Modal
                     header={
-                        <div className="feed-row">
+                        <div className={style.feedRow}>
                             <FeedHeader
                                 color={feed.color}
                                 companyName={feed.name}
@@ -85,7 +86,7 @@ const FeedRow = ({ feed }) => {
 };
 
 FeedRow.propTypes = {
-    feed: PropTypes.object.isRequired
+    feed: PropTypes.object.isRequired,
 };
 
 export default FeedRow;

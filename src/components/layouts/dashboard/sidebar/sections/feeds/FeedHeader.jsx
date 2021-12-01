@@ -1,20 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
+import style from "./FeedHeader.module.scss";
 
 const FeedHeader = ({ color, companyName, user }) => {
     const feedColors = ["#008001", "#e6e427", "#ff0000"];
     return (
         <>
-            <div className="feed-header">
+            <div className={style.feedHeader}>
                 <span
-                    className="feed-header-color"
+                    className={style.feedHeaderColor}
                     style={{
                         backgroundColor: `${feedColors[color - 1]}`,
                     }}
                 ></span>
-                <span className="feed-header-company-name">{companyName}</span>
+                <span className={style.feedHeaderCompanyName}>
+                    {companyName}
+                </span>
                 {user && (
-                    <span className="feed-header-user">{` [ ${user} ]`}</span>
+                    <span
+                        className={style.feedHeaderUser}
+                    >{` [ ${user} ]`}</span>
                 )}
             </div>
         </>

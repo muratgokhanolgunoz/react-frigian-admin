@@ -1,0 +1,48 @@
+.login {
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0;
+    .loginFormImg {
+        max-width: 200px;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .loginForm {
+        background-color: #fff;
+        padding: 40px 30px;
+        .loginFormRow {
+            margin-bottom: 10px;
+            label {
+                width: 80px;
+            }
+            input {
+                width: 100%;
+                background-color: transparent;
+                border-bottom: 1px solid gray;
+                transition: border-color 0.5s;
+                &:focus {
+                    outline: none;
+                    border-color: #000;
+                    transition: border-color 0.5s;
+                }
+            }
+            button {
+                padding: 5px 40px;
+                display: block;
+                margin: auto;
+                margin-top: 40px;
+                transition: box-shadow 0.2s;
+                &:hover {
+                    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+                    transition: box-shadow 0.2s;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
