@@ -13,6 +13,7 @@ import mapStyle from "../../../../utils/google_maps/styles";
 import style from "./Map.module.scss";
 import { FaUser } from "react-icons/fa";
 import ResetButton from "./ResetButton";
+import Statistics from "./info";
 
 const firmColors = ["#8b8989", "#008001", "#ff0000"];
 
@@ -45,7 +46,7 @@ const Map = () => {
     return (
         <div className={style.map}>
             <ResetButton setCenter={setCenter} />
-
+            <Statistics />
             <LoadScript
                 googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAP_API_KEY}
             >

@@ -1,0 +1,18 @@
+@mixin rowBlock($width) {
+    background-color: #fff;
+    display: block;
+    width: $width;
+    margin: 2px;
+    text-align: center;
+}
+
+.row {
+    .left {
+        @include rowBlock(150px);
+        float: left;
+    }
+    .right {
+        @include rowBlock(50px);
+        float: right;
+    }
+}

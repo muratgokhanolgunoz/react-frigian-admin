@@ -22,8 +22,8 @@ const Home = () => {
 
     const refreshHardwareUsage = () => {
         try {
-            getHardwareUsage().then((response) => {
-                const { mem, cpu, avg } = response.data;
+            getHardwareUsage().then(({ data }) => {
+                const { mem, cpu, avg } = data;
                 setMemoryUsage(mem);
                 setCpuUsage(cpu);
                 setCpuAverage(avg);

@@ -61,6 +61,7 @@ const Table = () => {
                 <TableFilter setFilterCredentials={setFilterCredentials} />
             </div>
             <div className={style.firmList} style={{ marginTop: "20px" }}>
+                <span>Showing {firmList.length} entries</span>
                 <BootstrapTable
                     striped={true}
                     hover={true}
