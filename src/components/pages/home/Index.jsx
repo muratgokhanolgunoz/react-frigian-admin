@@ -15,9 +15,13 @@ const Home = () => {
 
     useEffect(() => {
         refreshHardwareUsage();
-        setInterval(() => {
+        const hardwareUsageInterval = setInterval(() => {
             refreshHardwareUsage();
         }, 3000);
+
+        return () => {
+            clearInterval(hardwareUsageInterval);
+        };
     }, []);
 
     const refreshHardwareUsage = () => {

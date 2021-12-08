@@ -17,9 +17,13 @@ const App = () => {
     useEffect(() => {
         if (checkToken.check(context.token)) {
             getMapData(context);
-            setInterval(() => {
+            var intervalGetMapInfo = setInterval(() => {
                 getMapData(context);
             }, 30000);
+        }
+
+        return () => {
+            clearInterval(intervalGetMapInfo);
         }
     }, [context.token]);
 
